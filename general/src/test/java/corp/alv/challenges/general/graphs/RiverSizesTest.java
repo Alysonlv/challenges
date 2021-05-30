@@ -69,4 +69,45 @@ class RiverSizesTest {
 
         assertEquals(1, sizes.size());
     }
+
+    @Test
+    void riverSizes_case06() {
+        int[][] matrix = {
+                {1, 0, 0, 1, 0, 1, 1, 1},
+                {1, 0, 1, 0, 0, 1, 1, 0},
+                {0, 0, 1, 0, 1, 0, 1, 0},
+                {1, 0, 1, 0, 1, 0, 0, 1},
+                {1, 0, 1, 1, 0, 1, 0, 1},
+                {1, 0, 0, 1, 0, 1, 1, 1},
+                {1, 0, 1, 0, 0, 1, 1, 0},
+                {0, 0, 1, 0, 1, 0, 1, 0},
+                {1, 0, 1, 0, 1, 0, 0, 1},
+                {1, 0, 1, 1, 0, 1, 0, 1},
+        };
+
+        List<Integer> sizes = RiverSizes.riverSizes(matrix);
+
+        assertEquals(16, sizes.size());
+    }
+
+    @Test
+    void riverSizes_case07() {
+        int[][] matrix = {
+                {1, 1, 0, 0, 1, 0, 1, 1},
+                {1, 0, 1, 1, 0, 0, 0, 1},
+                {1, 1, 0, 0, 1, 1, 1, 1},
+                {0, 1, 0, 0, 0, 1, 1, 0},
+                {1, 0, 1, 1, 0, 1, 0, 0},
+                {1, 0, 1, 0, 0, 1, 0, 1},
+                {1, 1, 0, 1, 0, 1, 1, 1},
+                {0, 1, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0},
+                {1, 1, 0, 1, 1, 0, 0, 0},
+                {1, 0, 1, 1, 0, 1, 1, 0}
+        };
+
+        List<Integer> sizes = RiverSizes.riverSizes(matrix);
+
+        assertEquals(10, sizes.size());
+    }
 }

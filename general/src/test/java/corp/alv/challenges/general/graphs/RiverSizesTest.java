@@ -1,5 +1,6 @@
 package corp.alv.challenges.general.graphs;
 
+import corp.alv.challenges.general.graphs.easy.RiverSizes;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

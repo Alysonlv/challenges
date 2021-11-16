@@ -1,4 +1,4 @@
-package corp.alv.challenges.general.graphs;
+package corp.alv.challenges.general.graphs.easy;
 
 import java.util.ArrayList;
 import java.util.List;

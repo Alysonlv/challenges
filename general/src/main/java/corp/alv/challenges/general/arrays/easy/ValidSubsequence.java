@@ -1,4 +1,4 @@
-package corp.alv.challenges.general.arrays;
+package corp.alv.challenges.general.arrays.easy;
 
 import java.util.List;
 

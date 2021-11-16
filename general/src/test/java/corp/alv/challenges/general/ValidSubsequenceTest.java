@@ -1,6 +1,6 @@
 package corp.alv.challenges.general;
 
-import corp.alv.challenges.general.arrays.ValidSubsequence;
+import corp.alv.challenges.general.arrays.easy.ValidSubsequence;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;

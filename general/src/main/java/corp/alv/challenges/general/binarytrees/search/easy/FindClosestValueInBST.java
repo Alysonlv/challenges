@@ -1,5 +1,7 @@
 package corp.alv.challenges.general.binarytrees.search.easy;
 
+import corp.alv.challenges.general.domains.BST;
+
 /**
  * Find the Closest Value in Binary Search Tree
  *
@@ -47,13 +49,4 @@ public class FindClosestValueInBST {
         }
     }
 
-    static class BST {
-        public int value;
-        public BST left;
-        public BST right;
-
-        public BST(int value) {
-            this.value = value;
-        }
-    }
 }

@@ -65,15 +65,13 @@ public class BSTConstruction {
         public BST insert(int value) {
             if (value < this.value) {
                 if (left == null) {
-                    BST newBST = new BST(value);
-                    left = newBST;
+                    left = new BST(value);
                 } else {
                     left.insert(value);
                 }
             } else {
                 if (right == null) {
-                    BST newBST = new BST(value);
-                    right = newBST;
+                    right = new BST(value);;
                 } else {
                     right.insert(value);
                 }

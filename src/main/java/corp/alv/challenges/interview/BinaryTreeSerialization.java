@@ -16,7 +16,7 @@ For example,
 public class BinaryTreeSerialization {
 
     // Definition for a binary tree node.
-    public static class TreeNode {
+    private static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

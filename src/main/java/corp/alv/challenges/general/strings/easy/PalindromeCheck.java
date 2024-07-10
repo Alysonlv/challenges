@@ -1,5 +1,8 @@
 package corp.alv.challenges.general.strings.easy;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PalindromeCheck {
 
     public static boolean isPalindrome(String str) {

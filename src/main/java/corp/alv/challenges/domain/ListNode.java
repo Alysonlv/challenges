@@ -56,4 +56,20 @@ public class ListNode {
         return head;
     }
 
+    public static ListNode buildList(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return null; // Handle empty array case
+        }
+
+        ListNode head = new ListNode(arr[0]); // Create head node with first element
+        ListNode current = head;
+
+        for (int i = 1; i < arr.length; i++) {
+            ListNode newNode = new ListNode(arr[i]);
+            current.next = newNode;
+            current = current.next;
+        }
+
+        return head;
+    }
 }

@@ -1,69 +1,36 @@
 package corp.alv.challenges.general;
 
-/*
 
-### Write a pair of functions to serialize and deserialize a binary tree.
-
-# For example,
-
-#          3
-#        /   \
-#      1       2
-#   /           \
-#  4             5
-#
-#
-3,1,2,4,null,null,5,null,null,null,null
-##
-*/
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Solution {
-
-    StringBuilder sb;
-
-    public Solution() {
-        sb = new StringBuilder();
-    }
-
-    public StringBuilder buildString(Node root) {
-        if (root == null) {
-
-            return sb;
+    public static List<Integer> countingSort(List<Integer> arr) {
+        // Write your code here
+        int[] frequency = new int[100];
+        for (int val : arr) {
+            frequency[val] += 1;
         }
 
-        sb.append(root.value);
-        sb.append(",");
-        buildString(root.left);
-        buildString(root.right);
-
-        return sb;
+        return Arrays.stream(frequency)
+                .boxed()
+                .collect(Collectors.toList());
     }
-
-
 
     public static void main(String[] args) {
-        Node left = new Node(null, null, 1);
-        Node right = new Node(null, null, 2);
-        Node node = new Node(left, right, 3);
+        List<Integer> A = new ArrayList<>();
 
-        Solution solution = new Solution();
-        System.out.println(solution.buildString(node).toString());
-    }
-}
+        Collections.sort(A, Collections.reverseOrder());
 
-class Node {
-    public Node left;
-    public Node right;
-    public int value;
-
-    public Node(Node left, Node right, int value) {
-        this.left = left;
-        this.right = right;
-        this.value = value;
+        System.out.println("Alyson Lima Vasconcelos".toLowerCase().toCharArray());
     }
 }

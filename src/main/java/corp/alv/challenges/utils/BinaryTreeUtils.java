@@ -1,48 +1,46 @@
 package corp.alv.challenges.utils;
 
-import com.sun.source.tree.Tree;
 import corp.alv.challenges.domain.TreeNode;
+import org.springframework.util.StringUtils;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
 public class BinaryTreeUtils {
 
-    public static void dpsPreOrder(TreeNode node, StringBuilder sb) {
+    public static void dfsPreOrder(TreeNode node, StringBuilder sb) {
         if (node == null) {
+            sb.append("null, ");
             return;
         }
 
         sb.append(node.val).append(", ");
-        dpsPreOrder(node.left, sb);
-        dpsPreOrder(node.right, sb);
-
-        sb.deleteCharAt(sb.length()).deleteCharAt(sb.length());
+        dfsPreOrder(node.left, sb);
+        dfsPreOrder(node.right, sb);
     }
 
-    public static void dpsInOrder(TreeNode node, StringBuilder sb) {
+    public static void dfsInOrder(TreeNode node, StringBuilder sb) {
         if (node == null) {
+            sb.append("null, ");
             return;
         }
 
-        dpsInOrder(node, sb);
-        sb.append(node.val);
-        dpsInOrder(node, sb);
-
-        sb.deleteCharAt(sb.length()).deleteCharAt(sb.length());
+        dfsInOrder(node.left, sb);
+        sb.append(node.val).append(", ");
+        dfsInOrder(node.right, sb);
     }
 
-    public static void dpsPosOrder(TreeNode node, StringBuilder sb) {
+    public static void dfsPosOrder(TreeNode node, StringBuilder sb) {
         if (node == null) {
+            sb.append("null, ");
             return;
         }
 
-        dpsPosOrder(node, sb);
-        dpsPosOrder(node, sb);
-        sb.append(node.val);
-
-        sb.deleteCharAt(sb.length()).deleteCharAt(sb.length());
+        dfsPosOrder(node.left, sb);
+        dfsPosOrder(node.right, sb);
+        sb.append(node.val).append(", ");
     }
 
     public static int maxDepthPosOrder(TreeNode root) {
@@ -139,6 +137,24 @@ public class BinaryTreeUtils {
 
     public static void main(String[] args) {
         TreeNode node = createBinaryTree(new Integer[]{3, 1, 4, 3, null, 1, 5});
-        printTree(node);
+        StringBuilder sb;
+
+        sb = new StringBuilder();
+        dfsPreOrder(node, sb);
+        System.out.println(sb);
+
+        sb = new StringBuilder();
+        dfsInOrder(node, sb);
+        System.out.println(sb);
+
+        sb = new StringBuilder();
+        dfsPosOrder(node, sb);
+        System.out.println(sb);
+
+        node = createBinaryTree(new Integer[]{3, 7, 2, 6, 1, null, null, null, null, null, 9});
+        sb = new StringBuilder();
+        dfsInOrder(node, sb);
     }
+
+
 }

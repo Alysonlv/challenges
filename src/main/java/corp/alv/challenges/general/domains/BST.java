@@ -1,7 +1,5 @@
 package corp.alv.challenges.general.domains;
 
-import corp.alv.challenges.general.binarytrees.search.medium.BSTConstruction;
-
 public class BST {
     public int value;
     public BST left;
@@ -37,7 +35,7 @@ public class BST {
             } else {
                 return left.contains(value);
             }
-        } else if (value > this.value){
+        } else if (value > this.value) {
             if (right == null) {
                 return false;
             } else {

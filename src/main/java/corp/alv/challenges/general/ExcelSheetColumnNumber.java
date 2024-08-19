@@ -1,5 +1,8 @@
 package corp.alv.challenges.general;
 
+import org.springframework.util.CollectionUtils;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,6 +44,7 @@ columnTitle is in the range ["A", "FXSHRXW"].
 public class ExcelSheetColumnNumber {
 
     Map<String, Integer> columnMap = new HashMap<>();
+
     public int titleToNumber(String columnTitle) {
         if (columnMap.containsKey(columnTitle)) {
             return columnMap.get(columnTitle);
@@ -66,5 +70,6 @@ public class ExcelSheetColumnNumber {
         System.out.println(excelSheetColumnNumber.titleToNumber("A"));
         System.out.println(excelSheetColumnNumber.titleToNumber("AB"));
         System.out.println(excelSheetColumnNumber.titleToNumber("ABC"));
+
     }
 }
